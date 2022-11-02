@@ -21,6 +21,10 @@ const SignIpForm = () => {
         setFormFields({...formFields, [name]: value})
     }
 
+    const resetFormFields = () => {
+        setFormFields(defaultFormFields)
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -28,6 +32,7 @@ const SignIpForm = () => {
             if(password === confirmPassword) {
                 const {user} = await createAuthUserWithEmailAndPassword(email, password);
                 await createUserDocumentFromAuth(user, {displayName});
+                resetFormFields();
             } else { return }
         } catch (error) {
             if(error.code === 'auth/email-already-in-use') {
