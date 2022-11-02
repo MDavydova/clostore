@@ -1,9 +1,14 @@
 import {createContext, useState, useEffect} from "react";
-import {createUserDocumentFromAuth, onAuthStateChangedListener, signOutUser} from '../utils/firebase.utils'
+import {createUserDocumentFromAuth, onAuthStateChangedListener} from '../utils/firebase.utils'
 
 export const UserContext = createContext({
     currentUser: null,
     setCurrentUser: () => null,
+})
+
+export const ProductContext = createContext({
+    currentProduct: null,
+    setCurrentProduct: () => null,
 })
 
 export const UserProvider = ({children}) => {
@@ -22,4 +27,15 @@ export const UserProvider = ({children}) => {
     }, [])
 
     return <UserContext.Provider value={value}>{children}</UserContext.Provider>
+}
+
+export const ProductProvider = ({children}) => {
+    const [currentProduct, setCurrentProduct] = useState(null);
+    const value = {currentProduct, setCurrentProduct}
+
+    useEffect(() => {
+
+    }, [])
+
+    return <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
 }
