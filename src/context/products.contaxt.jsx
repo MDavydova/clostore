@@ -1,5 +1,4 @@
 import {createContext, useState, useEffect} from "react";
-import  {} from '../utils/firebase.utils'
 import PRODUCTS from '../shop-data.json'
 
 
