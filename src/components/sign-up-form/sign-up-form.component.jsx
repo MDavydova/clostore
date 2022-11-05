@@ -2,7 +2,7 @@ import {useState} from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth  } from "../../utils/firebase.utils";
 import './sign-up-form.styles.scss';
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
 
 const defaultFormFields = {
     displayName: '',
@@ -12,7 +12,7 @@ const defaultFormFields = {
 }
 
 
-const SignIpForm = () => {
+const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {displayName, email, password, confirmPassword} = formFields;
 
@@ -56,10 +56,10 @@ const SignIpForm = () => {
 
                 <FormInput label="Confirm Password" type='password' onChange={handleChange}   name="confirmPassword" value={confirmPassword} />
 
-                <Button buttonType="google" type="submit">Sign up</Button>
+                <Button buttonType={BUTTON_TYPE_CLASSES.google}  type="submit">Sign up</Button>
             </form>
         </div>
     )
 }
 
-export default SignIpForm
+export default SignUpForm;
