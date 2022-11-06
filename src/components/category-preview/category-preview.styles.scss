@@ -15,3 +15,24 @@
     column-gap: 20px;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  .category-preview-container {
+    .preview {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .category-preview-container {
+    .preview {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 20px;
+      row-gap: 50px;
+    }
+  }
+}

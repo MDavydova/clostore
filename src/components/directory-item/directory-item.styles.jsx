@@ -10,7 +10,7 @@ export const Background = styled.div`
 
 export const Body = styled.div`
     height: 90px;
-    padding: 0 25px;
+    padding: 0 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +31,12 @@ export const Body = styled.div`
     p {
       font-weight: lighter;
       font-size: 16px;
+    }
+    
+    @media screen and (max-width: 768px) {
+        h2 {
+            font-size: 16px
+       }
     }
 `
 
